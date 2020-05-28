@@ -1,6 +1,6 @@
 class List < ApplicationRecord
-  has_many :tasks
   belongs_to :board
+  has_many :tasks, dependent: :destroy
 
   def show_tasks(list_id)
     # list.tasks.each_with_index{|hash, i| hash[i][:name]}

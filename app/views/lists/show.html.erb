@@ -1,0 +1,27 @@
+<h1 class="ui header">Lists</h1>
+
+<div>
+    <%= link_to 'Edit List Title', edit_board_list_path(@board, @list) %>
+    <h2><%= @list.name %></h2>
+  </div>
+
+  <%= link_to 'Add Task', new_list_task_path(@list) %>
+
+    <ul>
+        <% @list.tasks.each do |t| %>
+        <li>  
+          <%= t.name.capitalize %>
+          <br />
+          <%= link_to 'Edit', edit_list_task_path(@list.id, t.id)%>
+          <%= link_to 'Delete', list_task_path(@list.id, t.id), method: :delete %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="extra content">
+    <%= link_to 'Delete List', [@board, @list], method: :delete %>
+    <br />
+    <%= link_to 'Back to Lists', board_lists_path(@board) %>
+  </div>
+</div>

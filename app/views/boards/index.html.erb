@@ -1,5 +1,7 @@
 <h1>All Boards</h1>
 
+<%= link_to "Add Board", new_board_path %>
+
 <% @boards.each do |board| %>
 <div class="ui cards">
   <div class="card">
@@ -8,6 +10,8 @@
       <div class="meta">Board Number: <%= board.id %></div>
       <div class="description">
         <%= link_to 'View Board', board_path(board), class:'ui button'%>
+        <%= link_to 'Edit Board', edit_board_path(board), class:'ui button'%>
+        <%= link_to 'Delete Board', board, method: :delete, class:'ui button'%>
       </div>
     </div>
   </div>

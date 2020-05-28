@@ -1,23 +1,11 @@
 <h1 class='ui header ui center aligned segment'><%= @board.name %></h1>
 
 <div class='layout'>
-<% @lists.each do |list| %>
-      <div class='ui card grey'>
-          <div class="content">
-              <div class="header"><%= list.name %></div>
-              <%= list.show_tasks(list)
-              <% @tasks.each do |task| %>
-                <div class='ui card grey'>
-                    <div class="content">
-                        <%= task.name %>
-                    </div>
-                </div>
-              <% end %>
-          </div>
-      </div>
-<% end %>
+
 </div>
 
 <div class="ui center aligned segment">
+  <%= link_to "View Lists", board_lists_path(@board)%>
+  <%= link_to "Edit Boards", edit_board_path(@board)%>
   <%= link_to 'Back to Boards', boards_path, class:'ui button large'%>
 </div>

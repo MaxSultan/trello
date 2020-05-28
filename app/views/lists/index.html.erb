@@ -1,2 +1,9 @@
-<h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
+<h1 class="ui header">Lists</h1>
+
+<%= link_to 'Add List', new_board_list_path(@board)%>
+<br />
+  <% @lists.each do |list| %>
+    <%= link_to list.name.capitalize, [@board, list] %>
+  <% end %>
+  <br />
+  <%= link_to "Back", boards_path %>
