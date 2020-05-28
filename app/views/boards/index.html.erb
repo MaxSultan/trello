@@ -1,0 +1,14 @@
+<h1>All Boards</h1>
+
+<% @boards.each do |board| %>
+<div class="ui cards">
+  <div class="card">
+    <div class="content">
+      <div class="header"><%= board.name %></div>
+      <div class="meta">Board Number: <%= board.id %></div>
+      <div class="description">
+        <%= link_to 'View Board', board_path(board), class:'ui button'%>
+      </div>
+    </div>
+  </div>
+<% end %>
